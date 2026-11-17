@@ -753,7 +753,7 @@ codeunit 5720 "Item Reference Management"
         ToDate: Date;
     begin
         ItemReference2.SetCurrentKey("Reference Type", "Reference Type No.");
-        ItemReference2.SetRange("Reference Type", ItemReference2."Reference Type"::" ");
+        ItemReference2.SetFilter("Reference Type", '%1|%2', ItemReference2."Reference Type"::" ", ItemReference2."Reference Type"::"Bar Code");
         ItemReference2.SetRange("Reference Type No.", '');
         ToDate := PhysInvtOrderLine.GetDateForCalculations();
         if ToDate <> 0D then begin
@@ -834,7 +834,7 @@ codeunit 5720 "Item Reference Management"
     begin
         ItemReference2.Reset();
         ItemReference2.SetCurrentKey("Reference Type", "Reference Type No.");
-        ItemReference2.SetRange("Reference Type", ItemReference2."Reference Type"::" ");
+        ItemReference2.SetFilter("Reference Type", '%1|%2', ItemReference2."Reference Type"::" ", ItemReference2."Reference Type"::"Bar Code");
         ItemReference2.SetRange("Reference Type No.", '');
         ToDate := PhysInvtRecordLine.GetDateForCalculations();
         if ToDate <> 0D then begin
